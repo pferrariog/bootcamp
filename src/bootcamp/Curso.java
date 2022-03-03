@@ -1,30 +1,14 @@
 package bootcamp;
 
-public class Curso {
+public class Curso extends Conteudo {
 
-    private String titulo;
-    private String descricao;
+
     private int cargaHoraria;
 
 
     public Curso() {
     }
 
-    public String getTitulo() {
-        return titulo;
-    }
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
 
     public int getCargaHoraria() {
         return cargaHoraria;
@@ -37,9 +21,15 @@ public class Curso {
     @Override
     public String toString() {
         return "curso{" +
-                "titulo='" + titulo + '\'' +
-                ", descricao='" + descricao + '\'' +
+                "titulo='" + getTitulo() + '\'' +
+                ", descricao='" + getDescricao() + '\'' +
                 ", cargaHoraria=" + cargaHoraria +
                 '}';
+    }
+
+    @Override
+    public double calcularXp() {
+        return XP_PADRAO* cargaHoraria;
+        //ao concluir o curso multiplica-se o xp padrao pela carga horaria para saber o xp total ganho
     }
 }
